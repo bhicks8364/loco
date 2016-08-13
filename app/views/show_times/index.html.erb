@@ -1,0 +1,33 @@
+<div class="col-md-12 well">
+  <h1>Listing Show Times</h1>
+  
+  <table class="table table-bordered table-hover">
+    <thead>
+      <tr>
+        <th>Band</th>
+        <th>Event</th>
+        <th>Start time</th>
+        <th>End time</th>
+        <th colspan="3"></th>
+      </tr>
+    </thead>
+  
+    <tbody>
+      <% @show_times.each do |show_time| %>
+        <tr>
+          <td><%= link_to show_time.band.name, show_time.band %></td>
+          <td><%= show_time.event.name %></td>
+          <td><%= show_time.start_time %></td>
+          <td><%= show_time.end_time %></td>
+          <td><%= link_to 'Show', event_show_times_path(@event, show_time) %></td>
+          <td><%= link_to 'Edit', edit_event_show_time_path(@event, show_time) %></td>
+          <td><%= link_to 'Destroy', event_show_time_path(@event, show_time), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  
+  <br>
+  
+  <%= link_to 'New Show time', new_event_show_time_path(@event) %>
+</div>

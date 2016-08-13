@@ -1,0 +1,37 @@
+<div class='col-md-12 well'>
+     <h1 class="text-center">VENDOR LIST</h1>
+     <hr>
+     <div class="table-responsive">
+        <table class='table table-bordered table-hover'>
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Phone number</th>
+              <th>Website</th>
+              <th>Contact name</th>
+              <th>Tagline</th>
+              <th>Category</th>
+              <th>Approved at</th>
+              <th>Approved by</th>
+              <th>Admin</th>
+            </tr>
+          </thead>
+        
+          <tbody>
+            <% vendors.each do |vendor| %>
+              <tr>
+                <td><%= link_to vendor.name, vendor, data: {target: "_blank"} %></td>
+                <td><%= vendor.phone_number %></td>
+                <td><%= link_to vendor.website, vendor.website if vendor.approved_at? %></td>
+                <td><%= vendor.contact_name %></td>
+                <td><%= vendor.tagline %></td>
+                <td><%= vendor.category %></td>
+                <td><%= vendor.approved_at %></td>
+                <td><%= user_signed_in? ? vendor.approver(current_user.id) : "SIGN IN" %></td>
+                <td><%= link_to 'Edit', edit_vendor_path(vendor) %> | <%= link_to 'Destroy', vendor, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+    </div>
+  </div>

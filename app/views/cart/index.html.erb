@@ -1,0 +1,42 @@
+<div class="col-md-12 light padd">
+<h1>Cart#index</h1>
+<h1>Your cart</h1>
+<% if @cart.empty? %>
+  <p></p>
+<% else %>
+<%= link_to "Empty cart", cart_clear_path %>
+<% end %>
+<br><br><br>
+
+<% total = 0 %>
+
+<!-- Accessing the cart session hash ["1",1], where "1" is the event id.
+-->
+<% if cart != {} && Event.all.any? %>
+<% cart.each do |id, qty| %>
+  <% event = Event.find_by_id(id) %>
+  
+  <ul>
+  <li>
+    <%= link_to event.name, event %>
+    <p><%= event.name %></p>
+    <p><%= number_to_currency(event.price, unit: '$') %></p>
+    <p>Quantity: <%= qty %></p>
+  </li>
+  </ul>
+
+  <% total += qty*event.price %>
+<% end %>
+
+<b>Total: <%= number_to_currency(total, unit: '$') %></b>
+
+<%= link_to "Check Out", checkout_path, class: "btn btn-success" %>
+</div>
+<% end %>
+<div class="well">
+  <%= render "events/table", events: Event.all %>
+</div>
+
+<hr>
+
+<h1><strong>TOTAL AMOUNT: <%= number_to_currency current_user.purchases.sum(:amount) %></strong></h1>

@@ -1,0 +1,30 @@
+<div class="col-md-12 light shadow">
+<h1 class="page-header">Lorain County Music Fest</h1>
+
+<h2 class="">Our non profit for the LOVE of MUSIC 10 year annual concert event!</h2>
+
+<p class="bold">LO. CO. MUSIC FEST 10 WILL BE AUGUST 5TH - 7TH 2016 THIS IS OUR 10 YEAR ANNIVERSARY, IT WILL BE ONE OF OUR BEST! REUNITING WITH A LOT OF BANDS, 
+PEOPLE & MUSIC! WE SUGGEST A DONATION OF $15 FOR THE WEEKEND. LOCATED AT HARMONY FIELD 15407 AVON BELDEN ROAD, GRAFTON, OHIO. 
+COME AND JOIN US FOR A  PRIMITIVE CAMPOUT, FILLED WITH MUSIC OF ALL GENRES, HAPPY PEOPLE, UNIQUE VENDORS, NATURE & GOOD TIMES!  </p>
+<hr>
+<div class="col-md-8 padd">
+    <%= image_tag("flyer_10.png", class: "flyer") %>
+</div>
+<% if user_signed_in? %>
+<h1>Braintree Id: <%= current_user.braintree_id %></h1>
+<div class="col-md-3 padd light shadow">
+    <h1>Your Tickets</h1>
+    <hr>
+        <% current_user.purchases.each do |purchase| %>
+            <p><%= link_to purchase.event.name,purchase.event %><br>
+            <%= number_to_currency purchase.amount %>
+            </p>
+        <% end %>
+    
+</div>
+<% end %>
+
+</div>
+<div class="col-md-12 main-video">
+    <%= render "layouts/main_video" %>
+</div>

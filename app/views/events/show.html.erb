@@ -1,0 +1,65 @@
+<div class="col-md-12 light padd">
+  
+  <hr>
+  <hr>
+  <hr>
+  
+  <%= link_to "Show Times", event_show_times_path(@event)%>
+  
+  <hr>
+  <h1>Line Up</h1>
+  <% @event.show_times.each do |show_time| %>
+
+    <h2><%= show_time.band.name %></h2>
+<p><%= show_time.start_time.stamp("11:34 AM") %> - <%= show_time.end_time.stamp("11:34 AM") %><br>
+<%=</p>
+
+  <% end %>
+  <hr>
+  
+  
+  <% @event_days = @event.occurring_on.map(&:to_datetime) %>
+
+<%= week_calendar attribute: :to_datetime, events: @event_days do |date, event_days| %>
+  <p class="big"><strong><%= date.stamp("8/1") %></strong></p>
+  
+
+  <% event_days.each do |event| %>
+    <div>
+      <%= event.name %>
+      
+        
+    </div>
+  <% end %>
+<% end %>
+<hr>
+<%= link_to "Add To Cart", add_to_cart_path(@event.id), class: "btn btn-info btn-lg" %>
+<hr>
+<p>
+  <strong>Name:</strong>
+  <%= @event.name %>
+</p>
+<div>
+</div>
+<hr>
+<p>
+  <strong>Start date:</strong>
+  <%= @event.start_date.stamp("Aug 5th, 2016") %>
+</p>
+
+<p>
+  <strong>End date:</strong>
+  <%= @event.end_date.stamp("Aug 5th, 2016") %>
+</p>
+
+<h3><%= @event.address %><br><%= @event.city %>, <%= @event.state %> <%= @event.zipcode %></h3>
+
+<p>
+  <strong>Price:</strong>
+  <%= number_to_currency @event.price %>
+</p>
+
+<%= link_to 'Edit', edit_event_path(@event) %> |
+<%= link_to 'Back', @event_days_path %>
+<%= link_to 'Destroy', @event, method: :delete, data: { confirm: 'Are you sure?' } %>
+</div>

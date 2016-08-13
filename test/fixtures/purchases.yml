@@ -1,0 +1,23 @@
+# == Schema Information
+#
+# Table name: purchases
+#
+#  id             :integer          not null, primary key
+#  event_id       :integer
+#  buyer_id       :integer
+#  created_at     :datetime         not null
+#  updated_at     :datetime         not null
+#  amount         :float
+#  transaction_id :integer
+#  qty            :integer
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  event_id: 1
+  buyer_id: 1
+
+two:
+  event_id: 1
+  buyer_id: 1

@@ -1,0 +1,73 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import "font-awesome";
+@import url(https://fonts.googleapis.com/css?family=Lato:400,300,700,400italic);
+@import url(https://fonts.googleapis.com/css?family=Coming+Soon|Patrick+Hand|Amatic+SC|Bad+Script);
+body {
+    background: url(dreamcatcher1.jpg) no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.navbar {
+    padding: 15px 3px 3px 15px;
+}
+
+ul {
+    text-decoration: none;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.orange {
+    color: orange;
+}
+
+.shadow {
+    -webkit-box-shadow: 6px 6px 5px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 6px 6px 5px 0px rgba(0,0,0,0.75);
+    box-shadow: 6px 6px 5px 0px rgba(0,0,0,0.75);
+}
+
+.padd {
+    padding: 20px;
+}
+.light {
+    background-color: rgba(255, 255, 255, 0.6);
+}
+.imp-list {
+    font-weight: bold;
+}
+
+.flyer {
+    max-width: 600px;
+}
+.hide {
+    display: none;
+}
+
+span.big2 {
+    font-size: 2em;
+}
+.big {
+    font-size: 1em;
+}

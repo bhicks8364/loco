@@ -1,0 +1,14 @@
+<%= simple_form_for([@event, @show_time]) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.association :band, include_blank: false %>
+    <!--<%= f.association :event %>-->
+    <%= f.input :start_time, as: :datetime, default: @event.start_date, ampm: true %>
+    <%= f.input :end_time, as: :datetime, default: @event.start_date, ampm: true  %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

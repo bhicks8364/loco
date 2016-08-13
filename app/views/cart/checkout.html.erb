@@ -1,0 +1,27 @@
+<div class="col-md-12">
+    <div class="col-md-12 well">
+        <% total = 0 %>
+
+<!-- Accessing the cart session hash ["1",1], where "1" is the event id.
+-->
+
+<% @cart.each do |id, qty| %>
+  <% event = Event.find_by_id(id) %>
+  
+  <ul>
+  <li>
+    <%= link_to event.name, event %>
+    <p><%= event.name %></p>
+    <p><%= number_to_currency(event.price, unit: '$') %></p>
+    <p>Quantity: <%= qty %></p>
+  </li>
+  </ul>
+
+  <% total += qty*event.price %>
+<% end %>
+<h1>TOTAL: <%= number_to_currency total_amount %></h1>
+
+<b>Total: <%= number_to_currency(total, unit: '$') %></b>
+        <%= render "transactions/form" %>
+    </div>
+</div>

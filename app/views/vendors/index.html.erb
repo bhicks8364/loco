@@ -1,0 +1,86 @@
+<div class="col-md-12 light padd">
+<h1 class="page-header text-center">Vendors</h1>
+<hr>
+<div class="col-md-3">
+  <%= vendor_placeholders(8) %>
+</div>
+<div class="col-md-6 light padd">
+  <div class="vendor-info">
+    <h1>How Can Your Business Get Noticed And Help Our Cause?</h1>
+    <p class="lead">
+      SPONSORSHIPS (tier level page included) will bring awareness and 
+      promote your business in and around our community.
+    </p>
+    <p class="bold">
+      **We invite you to provide business cards and flyers to us that will then be displayed at the event for all participants to view and collect.
+      We are also accepting donations for raffles & or you can donate drectly to our generosity link:
+      http://www.generosity.com/fundraisers/help-support-lorain-county-music-
+      fest-10/generosity
+    </p>
+    
+    
+    <hr>
+    <blockquote>**Thank you for your time & consideration of becoming a Local Music Supporter & a Lorain 
+    County Music Fest donor/sponsor.*</blockquote>
+    
+    <hr>
+    <h2>PLATINUM <small>Music Fest Sponsor </small> <span class="text-success pull-right"> $500.00 </span></h2> 
+    <hr>
+    <p>
+     A sponsorship at this level will have their business logo listed on the event poster & flyer, 
+    in any media advertising such as newspapers & social media or internet banners, & the main stage event banner. 
+    <br>You will receive a Lo. Co. Music Fest Sponsor T-Shirt & passes to the 10 year event. 
+    <br>You are also entitled to a 5X5 table space at our Winter Fest event to collect a mailing list and hand out samples of your product or service.
+    </p>
+    
+    <hr>
+    <h2>GOLD <small>Live Music Supporter </small> <span class="text-success pull-right"> $250.00 </span></h2> 
+    
+    <p>A sponsorship at this level will have their business logo listed on 
+    the event poster & flyer, in any media advertising such as newspapers 
+    & social media or internet banners, & the main stage event banner. <br>
+    You will receive passes to the 10 year event. & are also entitled to a 5x5 table space to collect a mailing list & hand out samples of your product or service.</p>
+    
+    <hr>
+    <h2>SILVER <small>Rock N Roller </small> <span class="text-success pull-right"> $100.00 </span></h2> 
+    <p>
+    A sponsorship at this level will have their business logo listed on 
+    the event poster and flyer, in any media advertising such as newspapers 
+    & social media or internet banners. </p>
+    
+    <hr>
+    <h2>BRONZE <small>Music Lover </small> <span class="text-success pull-right"> $50.00 </span></h2> 
+     
+    <p>A sponsorship at this level will be allowed to display their business cards or flyers on our general event table.</p>
+    
+    <hr>
+    <hr>
+    *Please note that you are not required to represent your business in a 5x5 booth at the event; it is optional to you. If you wish to attend, please contact Geri Ciacchi, LCMF Public Relations Director, 
+    at (440) 654-7000 or locomusicfest@yahoo.com as soon as possible so that she may send you a vendor application and assign you a space. If you cannot attend but wish to have information or promotional items displayed at the event, please send them directly to Geri Ciacchi 15407 Avon Belden Road, Grafton, Ohio 44044. You must be 18 or older to attend this event.
+    <hr>
+    <hr>
+    <hr>
+  </div>
+</div>
+<div class="col-md-3">
+  <h3 class="text-center">Other Info</h3>
+  <blockquote>
+      If you would like a donation receipt for tax purposes, please let us know. 
+    Should you have any questions regarding our event or donations of goods &/or services, please feel free to contact me. 
+    I would be more than happy to talk to you about how your business can be involved.
+    </blockquote>
+    <hr>
+    <%= vendor_placeholders(8) %>
+</div>
+<hr>
+<h1>ADMIN</h1>
+<hr>
+  <div class="col-md-12">
+    <hr>
+  <%= render "vendors/table", vendors: @vendors %>
+  </div>
+  
+
+</div>
+
+<%= link_to 'New Vendor', new_vendor_path %>

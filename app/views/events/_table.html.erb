@@ -1,0 +1,21 @@
+<table class="table table-bordered table-hover">
+<thead>
+  <tr>
+    <th>Name</th>
+    <th>Dates</th>
+    <th>Price</th>
+    <th></th>
+  </tr>
+</thead>
+
+<tbody>
+  <% events.each do |event| %>
+    <tr>
+      <td><%= link_to event.name, event %></td>
+      <td><%= event.start_date.stamp("Aug 5th") %> - <%= event.end_date.stamp("Aug 5th") %></td>
+      <td><%= number_to_currency event.price %></td>
+      <td><%= link_to "Add To Cart", add_to_cart_path(event.id), class: "btn btn-info" %></td>
+    </tr>
+  <% end %>
+</tbody>
+</table>

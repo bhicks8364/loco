@@ -1,0 +1,21 @@
+<div class="col-md-12 light padd">
+  <%= simple_form_for(@vendor) do |f| %>
+    <%= f.error_notification %>
+  
+    <div class="form-inputs">
+      <%= f.input :name %>
+      <%= f.input :description %>
+      <%= f.input :phone_number %>
+      <%= f.input :website %>
+      <%= f.input :contact_name %>
+      <%= f.input :tagline %>
+      <%= f.input :category %>
+      <%= f.input :approved_at %>
+      <%= f.input :approved_by %>
+    </div>
+  
+    <div class="form-actions">
+      <%= f.button :submit %>
+    </div>
+  <% end %>
+</div>

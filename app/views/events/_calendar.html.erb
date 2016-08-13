@@ -1,0 +1,9 @@
+  <%= month_calendar events: events do |date, events| %>
+    <%= date.stamp("7/8") %>
+  
+    <% events.each do |event| %>
+      <div>
+        <%= link_to event.name, event %>
+      </div>
+    <% end %>
+  <% end %>

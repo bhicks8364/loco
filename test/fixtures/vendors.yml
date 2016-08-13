@@ -1,0 +1,41 @@
+# == Schema Information
+#
+# Table name: vendors
+#
+#  id           :integer          not null, primary key
+#  name         :string
+#  description  :text
+#  phone_number :string
+#  website      :string
+#  contact_name :string
+#  tagline      :string
+#  category     :string
+#  approved_at  :datetime
+#  approved_by  :integer
+#  created_at   :datetime         not null
+#  updated_at   :datetime         not null
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  description: MyText
+  phone_number: MyString
+  website: MyString
+  contact_name: MyString
+  tagline: MyString
+  category: MyString
+  approved_at: 2016-08-08 21:54:15
+  approved_by: 1
+
+two:
+  name: MyString
+  description: MyText
+  phone_number: MyString
+  website: MyString
+  contact_name: MyString
+  tagline: MyString
+  category: MyString
+  approved_at: 2016-08-08 21:54:15
+  approved_by: 1

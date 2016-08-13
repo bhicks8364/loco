@@ -1,0 +1,41 @@
+<%= simple_form_for(@event) do |f| %>
+  <% if @event.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@event.errors.count, "error") %> prohibited this event from being saved:</h2>
+
+      <ul>
+      <% @event.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.input :name %><br>
+  </div>
+  <div class="field">
+    <%= f.input :start_date %><br>
+  </div>
+  <div class="field">
+    <%= f.input :end_date %><br>
+  </div>
+  <div class="field">
+    <%= f.input :address %><br>
+  </div>
+  <div class="field">
+    <%= f.input :city %><br>
+  </div>
+  <div class="field">
+    <%= f.input :state %><br>
+  </div>
+  <div class="field">
+    <%= f.input :zipcode %><br>
+  </div>
+  <div class="field">
+    <%= f.input :price %><br>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

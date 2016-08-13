@@ -1,0 +1,30 @@
+<div class="col-md-6 well well-sm shadow">
+    <h2>Buy Tickets</h2>
+    <hr>
+    <p class="text-info text-center">Please REFRESH the page if the payment screen is not shown below.</p>
+    <%= form_tag transaction_path do %>
+    <%= hidden_field_tag :total_amount, total_amount %>
+      <div id="payment-form"></div>
+      <hr>
+      <input type="submit" value="Buy Now" class="btn btn-primary pull-right">
+    <% end %>
+</div>
+
+
+
+
+
+
+
+
+<script src="https://js.braintreegateway.com/js/braintree-2.27.0.min.js"></script>
+<script>
+// We generated a client token for you so you can test out this code
+// immediately. In a production-ready integration, you will need to
+// generate a client token on your server (see section below).
+var clientToken = "<%= Braintree::ClientToken.generate %>"
+
+braintree.setup(clientToken, "dropin", {
+  container: "payment-form"
+});
+</script>

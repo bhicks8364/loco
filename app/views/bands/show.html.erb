@@ -1,0 +1,23 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @band.name %>
+</p>
+
+<p>
+  <strong>Phone number:</strong>
+  <%= @band.phone_number %>
+</p>
+
+<p>
+  <strong>Contact name:</strong>
+  <%= @band.contact_name %>
+</p>
+
+<% @band.show_times.each do |set| %>
+  <%= set.start_time %><br>
+<% end %>
+
+<%= link_to 'Edit', edit_band_path(@band) %> |
+<%= link_to 'Back', bands_path %>

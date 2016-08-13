@@ -1,0 +1,46 @@
+<div class="col-md-3 padd light shadow">
+    <p class="lead bold">WITH THESE CONFIRMED BANDS: </p>
+    <div class="band-list">
+        
+        <ul class="imp-list">
+            <li>Ball & Chain: Janis Joplin</li>
+            <li>Floyd The Tribute: Pink Floyd</li>
+            <li>The Next Doors: Doors</li>
+            <li>Ragged Glory: Neil Young & Crazy Horse</li>
+            <li>Dead Ahead Ohio: Grateful Dead</li>
+            <li>Powerful Pills: Phish</li>
+            <li>D. C. & The Continentals</li>
+            <li>Daniel Murphy</li>
+            <li>The Grafton Road Band </li>
+            <li>Shallow Wake</li>
+            <li>Whiskey Stills & Hash</li>
+            <li>This Avenue Dark</li>
+            <li>Three On The Tree</li>
+            <li>Deither the Wizkid</li>
+            <li>Jai Merina</li>
+            <li>Black River Bog</li>
+            <li>Sleep Lord</li>
+            <li>Blindside Avenue</li>
+            <li>D.J. The Cheshire Wolf</li>
+            <li>D.J. L-Side</li>
+            <li>Misery</li>
+            <li>Dirt</li>
+            <li>Black River Ramblers (Acoustic)</li>
+            <li>Big Agnes</li>
+        </ul>
+    </div>
+</div>
+
+
+////////////////////////////
+
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+  <ul class="dropdown-menu">
+    <li><a href="#">Action</a></li>
+    <li><a href="#">Another action</a></li>
+    <li><a href="#">Something else here</a></li>
+    <li role="separator" class="divider"></li>
+    <li><a href="#">Separated link</a></li>
+  </ul>
+</li>
