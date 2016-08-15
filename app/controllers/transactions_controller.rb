@@ -26,8 +26,19 @@ class TransactionsController < ApplicationController
         :submit_for_settlement => true
       }
     )
-    session[:cart] = nil  
-    
-    redirect_to root_path, notice: "You just bought your tickets!!!!"
+    if trans_result
+      @cart = cart
+      @cart_total = 0
+      @cart.each do |id, qty| 
+        event = Event.find_by_id(id)
+        Purchase.create(buyer_id: current_user.id, event_id: event.id, amount: event.price )
+        @cart_total += qty*event.price 
+      end 
+      session[:cart] = nil  
+      
+      redirect_to root_path, notice: "You just bought your tickets!!!!"
+    else
+      redirect_to root_path, notice: "Unable to purchase tickets."
+    end
   end
 end

@@ -27,7 +27,7 @@ class CartController < ApplicationController
     @cart_total = 0
     @cart.each do |id, qty| 
       event = Event.find_by_id(id)
-      Purchase.create(buyer_id: current_user.id, event_id: event.id, amount: event.price )
+      # Purchase.create(buyer_id: current_user.id, event_id: event.id, amount: event.price )
       @cart_total += qty*event.price 
     end 
   end
